@@ -2,6 +2,7 @@ package com.example.firebaserecycleradapter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -56,8 +57,9 @@ public class MainActivity extends AppCompatActivity {
                 databaseReference.setValue(map);
             }
         });
+       // RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
 
-        linearLayoutManager=new LinearLayoutManager(this);
+        linearLayoutManager=new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         fetch();
